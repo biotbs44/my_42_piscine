@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jungyang <jungyang@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/28 01:10:09 by jungyang          #+#    #+#             */
-/*   Updated: 2021/09/28 01:21:29 by jungyang         ###   ########.fr       */
+/*   Created: 2021/09/28 01:21:44 by jungyang          #+#    #+#             */
+/*   Updated: 2021/09/28 03:20:51 by jungyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_fibonacci(int index)
+#include <stdio.h>
+
+int	ft_sqrt(int nb)
 {
-	if (index < 0)
-		return (-1);
-	else if (index <= 1)
-		return (index);
-	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	int	i;
+
+	i = 1;
+	while (i <= 46341)
+	{
+		if (i * i == nb)
+			return (i);
+		i++;
+	}
+	return (0);
+}
+
+int	main(void)
+{
+	printf("has sqrt? : %d\n", ft_sqrt(2147483647));
 }
