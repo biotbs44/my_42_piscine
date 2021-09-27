@@ -6,7 +6,7 @@
 /*   By: jungyang <jungyang@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 08:54:35 by jungyang          #+#    #+#             */
-/*   Updated: 2021/09/25 09:05:37 by jungyang         ###   ########.fr       */
+/*   Updated: 2021/09/28 07:44:23 by jungyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,4 @@ void	ft_print_comb2(void)
 			ft_putchar(ft_to_ascii(b, 0));
 		}
 	}
-}
-
-int	main(void)
-{
-	ft_print_comb2();
-	return (0);
 }
