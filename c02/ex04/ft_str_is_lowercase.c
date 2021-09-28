@@ -6,20 +6,17 @@
 /*   By: jungyang <jungyang@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 14:50:56 by jungyang          #+#    #+#             */
-/*   Updated: 2021/09/25 14:52:12 by jungyang         ###   ########.fr       */
+/*   Updated: 2021/09/28 08:13:19 by jungyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_lowercase(char *str)
 {
-	char	*ptr;
-
-	ptr = str;
-	while (*ptr)
+	while (*str)
 	{
-		if (*ptr < 'a' || *ptr > 'z')
+		if (*str < 'a' || *str > 'z')
 			return (0);
-		ptr++;
+		str++;
 	}
 	return (1);
 }

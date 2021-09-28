@@ -6,20 +6,17 @@
 /*   By: jungyang <jungyang@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 14:54:22 by jungyang          #+#    #+#             */
-/*   Updated: 2021/09/25 14:55:42 by jungyang         ###   ########.fr       */
+/*   Updated: 2021/09/28 13:05:14 by jungyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_printable(char *str)
 {
-	char	*ptr;
-
-	ptr = str;
-	while (*ptr)
+	while (*str)
 	{
-		if (*ptr <= 31 || *ptr == 127)
+		if (*str <= 31 || *str == 127)
 			return (0);
-		ptr++;
+		str++;
 	}
 	return (1);
 }

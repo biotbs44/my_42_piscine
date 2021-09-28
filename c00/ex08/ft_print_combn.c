@@ -6,40 +6,30 @@
 /*   By: jungyang <jungyang@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 01:02:45 by jungyang          #+#    #+#             */
-/*   Updated: 2021/09/27 04:35:11 by jungyang         ###   ########.fr       */
+/*   Updated: 2021/09/28 08:11:34 by jungyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_make_array_and_check_ascending(int num, int end, int n);
-void	ft_write_array(char *str, int num, int end, int n);
-
-void	ft_print_combn(int n)
+void	ft_write_array(char *str, int num, int end, int n)
 {
-	int	num;
-	int	break_num;
-	int	mul_ten;
-	int	num_pos;
+	int	idx;
+	int	temp;
 
-	break_num = 0;
-	num = 0;
-	mul_ten = 1;
-	num_pos = n - 1;
-	while (num_pos >= 1)
+	temp = num;
+	idx = 0;
+	if (num == end)
 	{
-		num += (mul_ten * num_pos--);
-		mul_ten *= 10;
+		while (idx < n)
+			write(1, &str[idx++], 1);
 	}
-	mul_ten = 1;
-	num_pos = 9;
-	while (num_pos >= (10 - n))
+	else
 	{
-		break_num += ((num_pos--) * (mul_ten));
-		mul_ten *= 10;
+		while (idx < n)
+			write(1, &str[idx++], 1);
+		write(1, ", ", 2);
 	}
-	while (num <= break_num)
-		ft_make_array_and_check_ascending(num++, break_num, n);
 }
 
 void	ft_make_array_and_check_ascending(int num, int end, int n)
@@ -70,22 +60,29 @@ void	ft_make_array_and_check_ascending(int num, int end, int n)
 		ft_write_array(str, num, end, n);
 }
 
-void	ft_write_array(char *str, int num, int end, int n)
+void	ft_print_combn(int n)
 {
-	int	idx;
-	int	temp;
+	int	num;
+	int	break_num;
+	int	mul_ten;
+	int	num_pos;
 
-	temp = num;
-	idx = 0;
-	if (num == end)
+	break_num = 0;
+	num = 0;
+	mul_ten = 1;
+	num_pos = n - 1;
+	while (num_pos >= 1)
 	{
-		while (idx < n)
-			write(1, &str[idx++], 1);
+		num += (mul_ten * num_pos--);
+		mul_ten *= 10;
 	}
-	else
+	mul_ten = 1;
+	num_pos = 9;
+	while (num_pos >= (10 - n))
 	{
-		while (idx < n)
-			write(1, &str[idx++], 1);
-		write(1, ", ", 2);
+		break_num += ((num_pos--) * (mul_ten));
+		mul_ten *= 10;
 	}
+	while (num <= break_num)
+		ft_make_array_and_check_ascending(num++, break_num, n);
 }

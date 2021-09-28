@@ -6,22 +6,19 @@
 /*   By: jungyang <jungyang@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 14:45:23 by jungyang          #+#    #+#             */
-/*   Updated: 2021/09/25 14:47:27 by jungyang         ###   ########.fr       */
+/*   Updated: 2021/09/28 13:04:28 by jungyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_alpha(char *str)
 {
-	char	*ptr;
-
-	ptr = str;
-	while (*ptr)
+	while (*str != '\0')
 	{
-		if (*ptr < 'A')
+		if (*str < 'A')
 			return (0);
-		if ((*ptr > 'Z' && *ptr < 'a') || *ptr > 'z')
+		if ((*str > 'Z' && *str < 'a') || *str > 'z')
 			return (0);
-		ptr++;
+		str++;
 	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: jungyang <jungyang@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 16:25:03 by jungyang          #+#    #+#             */
-/*   Updated: 2021/09/25 17:33:25 by jungyang         ###   ########.fr       */
+/*   Updated: 2021/09/28 12:44:26 by jungyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strcapitalize(char *str)
 			if (*ptr <= 'z' && *ptr >= 'a')
 				*ptr -= 32;
 		}
-		else if (an(*(ptr - 1)) == 0)
+		else if (ft_check(*(ptr - 1)) == 0)
 		{
 			if (*ptr <= 'z' && *ptr >= 'a')
 				*ptr -= 32;
