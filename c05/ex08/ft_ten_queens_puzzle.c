@@ -6,11 +6,9 @@
 /*   By: jungyang <jungyang@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 04:27:25 by jungyang          #+#    #+#             */
-/*   Updated: 2021/09/28 07:37:00 by jungyang         ###   ########.fr       */
+/*   Updated: 2021/09/28 13:33:35 by jungyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_ten_queens_puzzle(void)
 {

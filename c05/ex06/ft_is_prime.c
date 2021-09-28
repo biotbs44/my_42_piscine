@@ -6,11 +6,9 @@
 /*   By: jungyang <jungyang@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 02:16:38 by jungyang          #+#    #+#             */
-/*   Updated: 2021/09/28 03:21:10 by jungyang         ###   ########.fr       */
+/*   Updated: 2021/09/28 13:33:11 by jungyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_is_prime(int nb)
 {
@@ -29,9 +27,4 @@ int	ft_is_prime(int nb)
 	}
 	else
 		return (0);
-}
-
-int	main(void)
-{
-	printf("2147483647 is prime? : %d\n", ft_is_prime(2147483647));
 }

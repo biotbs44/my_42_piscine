@@ -6,11 +6,9 @@
 /*   By: jungyang <jungyang@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 02:55:50 by jungyang          #+#    #+#             */
-/*   Updated: 2021/09/28 03:16:50 by jungyang         ###   ########.fr       */
+/*   Updated: 2021/09/28 13:33:24 by jungyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_is_prime(int nb)
 {
@@ -43,9 +41,4 @@ int	ft_find_next_prime(int nb)
 		temp++;
 	}
 	return (0);
-}
-
-int	main(void)
-{
-	printf("next prime is %d\n", ft_find_next_prime(23687382));
 }

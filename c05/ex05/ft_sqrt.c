@@ -6,11 +6,9 @@
 /*   By: jungyang <jungyang@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 01:21:44 by jungyang          #+#    #+#             */
-/*   Updated: 2021/09/28 03:20:51 by jungyang         ###   ########.fr       */
+/*   Updated: 2021/09/28 13:32:59 by jungyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_sqrt(int nb)
 {
@@ -24,9 +22,4 @@ int	ft_sqrt(int nb)
 		i++;
 	}
 	return (0);
-}
-
-int	main(void)
-{
-	printf("has sqrt? : %d\n", ft_sqrt(2147483647));
 }
