@@ -6,31 +6,72 @@
 /*   By: jungyang <jungyang@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 04:27:25 by jungyang          #+#    #+#             */
-/*   Updated: 2021/09/28 13:33:35 by jungyang         ###   ########.fr       */
+/*   Updated: 2021/09/28 20:34:19 by jungyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_ten_queens_puzzle(void)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
-	char		chess[10];
-	static int		count;
-	int				line;
-	int				i;
-	
-	line = 0;
+	write(1, &c, 1);
+}
+
+int	ft_abs(int nb)
+{
+	if (nb < 0)
+		return (nb * -1);
+	else
+		return (nb);
+}
+
+int	ft_promising(int line, int *tab)
+{
+	int	i;
+
 	i = 0;
-	if (line == 9)
+	while (i < line)
 	{
-		count++;
+		if (tab[line] == tab[i] || line - i == ft_abs(tab[line] - tab[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+void	ft_nqueen(int line, int *tab, int *cnt)
+{
+	int	i;
+
+	i = 0;
+	if (line == 10)
+	{
+		(*cnt)++;
+		while (i < 10)
+		{
+			ft_putchar(tab[i] + 48);
+			i++;
+		}
+		ft_putchar('\n');
 		return ;
 	}
-	while (i++ < 10)
-	{	
-		line++;
-		chess[line] = i;
-		if (promising(line))
-		{
-			ft_ten_queens_puzzle();
-		}
+	while (i < 10)
+	{
+		tab[line] = i;
+		if (ft_promising(line, tab))
+			ft_nqueen(line + 1, tab, cnt);
+		i++;
 	}
-	return (count);
+}
+
+int	ft_ten_queens_puzzle(void)
+{
+	int				tab[10];
+	int				line;
+	int				cnt;
+
+	line = 0;
+	cnt = 0;
+	ft_nqueen(line, tab, &cnt);
+	return (cnt);
+}
