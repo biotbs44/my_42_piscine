@@ -6,17 +6,20 @@
 /*   By: jungyang <jungyang@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 14:56:11 by jungyang          #+#    #+#             */
-/*   Updated: 2021/09/28 13:05:56 by jungyang         ###   ########.fr       */
+/*   Updated: 2021/09/28 13:10:17 by jungyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strupcase(char *str)
 {
-	while (*str)
+	char	*ptr;
+
+	ptr = str;
+	while (*ptr)
 	{
-		if (*str >= 'a' && *str <= 'z')
-			*str -= 32;
-		str++;
+		if (*ptr >= 'a' && *ptr <= 'z')
+			*ptr -= 32;
+		ptr++;
 	}
-	return (str);
+	return (ptr);
 }

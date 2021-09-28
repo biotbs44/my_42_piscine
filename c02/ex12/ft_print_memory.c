@@ -6,7 +6,7 @@
 /*   By: jungyang <jungyang@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 17:53:55 by jungyang          #+#    #+#             */
-/*   Updated: 2021/09/27 04:18:17 by jungyang         ###   ########.fr       */
+/*   Updated: 2021/09/28 13:22:17 by jungyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	func_print_str_to_hex(char *addr, unsigned int size)
+void	ft_print_str_to_hex(char *addr, unsigned int size)
 {
 	unsigned int			i;
 	int						idx;
@@ -46,7 +46,7 @@ void	func_print_str_to_hex(char *addr, unsigned int size)
 	write(1, " ", 1);
 }
 
-void	func_print_addr(char *addr)
+void	ft_print_addr(char *addr)
 {
 	long long		hex_addr;
 	char			*hex;
@@ -66,12 +66,12 @@ void	func_print_addr(char *addr)
 		write(1, &hex_addr_array[i], 1);
 }
 
-void	func_print_str(char *char_addr, unsigned int size)
+void	ft_print_str(char *char_addr, unsigned int size)
 {
 	unsigned int		i;
 
 	i = 0;
-	while (i < size)
+	while (i < size - 1)
 	{
 		if ((char_addr[i] >= 32) && (char_addr[i] != 127))
 			ft_putchar(char_addr[i]);
@@ -91,17 +91,17 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	{
 		if (size > 16)
 		{
-			func_print_addr(char_addr);
+			ft_print_addr(char_addr);
 			ft_putchar(':');
-			func_print_str_to_hex(char_addr, 16);
-			func_print_str(char_addr, 16);
+			ft_print_str_to_hex(char_addr, 16);
+			ft_print_str(char_addr, 16);
 		}
 		else
 		{
-			func_print_addr(char_addr);
+			ft_print_addr(char_addr);
 			ft_putchar(':');
-			func_print_str_to_hex(char_addr, size);
-			func_print_str(char_addr, size);
+			ft_print_str_to_hex(char_addr, size);
+			ft_print_str(char_addr, size);
 			break ;
 		}
 		size -= 16;
